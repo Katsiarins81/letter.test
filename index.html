@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibir pago</title>
+    <style>
+    body, html {
+      overflow-x: hidden;
+      background-color: #f4f4f4;
+    }
+    * {
+      box-sizing: border-box;
+    }
+       /*for eismann*/
+       .bg-eismann{
+      background-color: #0000B2;
+    }
+    .note-eismann{
+      border-left: 3px solid #0000B2;
+    }
+    .color-eismann{
+      color: #0000B2;
+    }
+     .border-eismann{
+      border: 1px solid #0000B2;
+    }
+    /*for dentalex*/
+    .note-dentalex{
+      border-left: 3px solid #00AEFF;
+    }
+    .bg-dentalex{
+      background-color: #00AEFF;
+    }
+    .color-dentalex{
+      color: #00AEFF;
+    }
+    .border-dentalex{
+      border: 1px solid #00AEFF;
+    }
+    /*general*/
+    .outer-table {
+      width: 100%;
+      background-color: #f4f4f4;
+      padding: 20px;
+      font-family: "Open Sans", Arial, sans-serif;
+      border-collapse: collapse;
+    }
+    .container {
+      max-width: 560px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    /* header */
+    .header-top {
+      height: 30px;
+      text-align: center;
+    }
+    .header-left {
+      text-align: left;
+      padding: 10px 15px;
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 8px 8px 0 0;
+    }
+    .header-right {
+      text-align: right;
+      padding: 15px 0;
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 8px 8px 0 0;
+    }
+    /* content */
+    .content {
+      font-size: 16px;
+      color: #333333;
+    }
+    .padding-horizontal{
+      padding: 0 20px;
+    }
+    .padding-custom {
+      padding: 0 20px 0 40px;
+    }
+    .paragraph {
+      margin: 5px 0;
+    }
+    .content {
+    padding: 0 20px;
+    }
+
+    .content-center {
+        text-align: center;
+    }
+
+    .status-title {
+        margin-bottom: 0;
+        font-size: 16px;
+    }
+
+    .status-text {
+        margin-top: 0;
+    }
+
+    .status-img {
+        width: 80%;
+    }
+
+    .highlight {
+        padding-left: 15px;
+        margin-left: 15px;
+        width: 90%;
+        text-align: left;
+    }
+    /*order*/
+    .content-order{
+        padding:0 20px;
+        font-size:16px;
+        color:#333333;
+    }
+    .content-order a{
+      display: block;
+      width: min-content;
+      height: 100%; 
+      text-decoration-line: none;
+      border-radius: 0 0 6px 6px; 
+      background-color: #C4C4C4; 
+      padding: 3px 50px; 
+      margin: 0;
+      color:#333333;
+      text-align: center;
+    }
+    .content-order a span{ 
+    font-size: 22px;
+    }
+
+    
+    /* footer */
+    .footer-top {
+      text-align: center;
+      background-color: #FBF7F7;
+      border: 0;
+    }
+    .footer-top td{
+      padding-top: 10px;
+    }
+    .social-link,
+    .mail-link {
+      text-decoration: none;
+    }
+    .footer-info{
+     padding: 15px;
+      font-size: 14px;
+      color: #666666; 
+    }
+    .footer-info-left {
+      text-align: left;  
+    }
+    .footer-info-right {
+      text-align: right;
+      vertical-align: top;
+    }
+    .text-transform{
+      text-transform: uppercase;
+    }
+    /*for table*/
+    mce-item-table tr{
+      border: 1px solid #AFAFAF;
+    }
+    mce-item-table tr:nth-child(2n){
+      background-color: #FBF7F7;
+    }
+    mce-item-table tr:nth-child(2n+1){
+      background-color: #FFFFFF;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+      }
+      .content {
+        font-size: 14px !important;
+      }
+      .button {
+        display: block !important;
+        text-align: center !important;
+        font-size: 18px !important;
+      }
+      .padding-custom {
+        width: 100% !important;
+        margin-left: 0 !important;
+      }
+      .status-img {
+        width: 100% !important;
+      }
+    }
+    </style>
+</head>
+<body>
+  <table class="outer-table" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td align="center">
+        <table role="presentation" class="container" cellspacing="0" cellpadding="0" border="0">
+          <!-- Header -->
+          <tr>
+            <td colspan="2" class="header-top bg-%Store.Name%"></td>
+          </tr>
+          <tr>
+            <td class="header-left" align="center">
+              <a href="%Store.URL%" target="_blank" rel="noopener">
+                <img src="%Store.URL%Themes/MotionExtension/Content/img/logo_%Store.Name%.png" alt="logo" width="80%" border="0" />
+              </a>
+            </td>
+            <td class="header-right" align="center">
+              <img src="%Store.URL%Themes/MotionExtension/Content/img/logo_tooth_%Store.Name%.png" alt="logo_tooth" width="70px" border="0" />
+            </td>
+          </tr>
+         
+                    <!-- Order -->
+                    <tr>
+                      <td class="content content-order"  align="right"  colspan="2">
+                        
+                          <a href="%Order.OrderURLForCustomer% " align="center" vertical-align="midlle">
+                              <strong>Pedido<br/>
+                              <span>%Order.OrderNumber% </span></strong>
+                          </a>
+                          
+                      </td>
+                  </tr>
+                    <!-- Content -->
+
+                    <tr>
+                        <td class="content" colspan="2">
+                            <p><strong>¡Hola %Order.CustomerFullName%, Gracias, hemos recibido tu pago!</strong></p>
+                            <p>Se acaba de pagar el pedido<strong> %Order.OrderNumber%.</strong></p>
+                            <p>Ya confirmamos tu pago, comenzaremos con el proceso de envío y te mantendremos informado acerca del estatus.</p>
+                        </td>
+                    </tr>
+                    <!-- Status -->
+                    <tr>
+                        <td class="content content-center" colspan="2">
+                            <h1 class="status-title color-%Store.Name%">Estatus</h1>
+                            <p class="status-text"><i>Procesando envío</i></p>
+                            %if (%Order.Paid)
+                            <img src="%Store.URL%Themes/MotionExtension/Content/img/Status_Pagado_%Store.Name%.png" alt="Status_Pedido" class="status-img"> 
+                            endif%
+                       <!--?-->      %if (!%Order.Paid)
+                            <img src="%Store.URL%Themes/MotionExtension/Content/img/Status_noPagado_%Store.Name%.png" alt="Status_noPedido" class="status-img"> 
+                            endif%     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content" colspan="2">
+                            <p>A continuación se muestra una breve descripción del pedido.<br/>
+                                Por favor verifique sus datos y lista de pedidos.</p>
+                        </td>
+                    </tr>
+                     <!-- Details -->
+                     <tr>
+                      <td class="content" colspan="2">
+                          <p class="highlight note-%Store.Name%">
+                              <strong>Número de orden:</strong> %Order.OrderNumber% <br/>
+                              <strong>Detalles del pedido:</strong> %Order.OrderURLForCustomer%<br/>
+                              <strong>Fecha de pedido:</strong> %Order.CreatedOn%<br/>
+                          </p>
+                          <p class="highlight note-%Store.Name%">
+                              <strong>Dirección de facturación:</strong> <br/>
+                              %Order.BillingFirstName% %Order.BillingLastName%<br/>
+                              %Order.BillingAddress1% %Order.BillingAddress2%<br/>
+                              %Order.BillingCity% %Order.BillingZipPostalCode%<br/>
+                              %Order.BillingStateProvince% %Order.BillingCountry%
+                          </p>
+                          %if (%Order.Shippable%)
+                          <p class="highlight note-%Store.Name%">
+                              <strong>Dirección de envío:</strong> <br/>
+                              %Order.ShippingFirstName% %Order.ShippingLastName%<br/>
+                              %Order.ShippingAddress1% %Order.ShippingAddress2%<br/>
+                              %Order.ShippingCity% %Order.ShippingZipPostalCode%<br/>
+                              %Order.ShippingStateProvince% %Order.ShippingCountry%
+                          </p>
+                          <p class="highlight note-%Store.Name%">
+                              <strong>Método de envío:</strong> %Order.ShippingMethod%
+                          </p>
+                          <p class="highlight note-%Store.Name%">
+                              <strong>Método de pago:</strong> %Order.PaymentMethod%
+                          </p>
+                          endif%
+                          %Order.Product(s)%
+                      </td>
+                  </tr>
+                   <!-- Footer -->
+                   <tr class="footer-top">
+                    <td colspan="2">
+                      <a href="https://www.facebook.com/%Store.Name%Mexico/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+                        <img src="%Store.URL%Themes/MotionExtension/Content/img/logo_facebook.png" alt="facebook" width="50px" />
+                      </a>
+                      <a href="https://www.instagram.com/nopcommerce_official" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+                        <img src="%Store.URL%Themes/MotionExtension/Content/img/logo_instagram.png" alt="instagram" width="50px" />
+                      </a>
+                      <a href="https://twitter.com/nopCommerce" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="social-link">
+                        <img src="%Store.URL%Themes/MotionExtension/Content/img/logo_twitter.png" alt="twitter" width="50px" />
+                      </a>
+                      <a href="https://www.youtube.com/user/nopCommerce" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-link">
+                        <img src="%Store.URL%Themes/MotionExtension/Content/img/logo_youtube.png" alt="youtube" width="50px" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="footer-top">
+                    <td class="footer-info footer-info-left">
+                      <p class="paragraph">
+                        <a href="%Store.URL%" class="activation-link color-%Store.Name%">www.%Store.Name%.mx</a>
+                      </p>
+                      <p class="paragraph"><span class="text-transform">%Store.Name%</span> Aleman SA de CV</p>
+                      <p class="paragraph">Productos dentales · Atención personalizada</p>
+                      <p class="paragraph">Soluciones de alta calidad · Innovación</p>
+                      <p class="paragraph">Compromiso con la satisfacción del cliente</p>
+                    </td>
+                    <td class="footer-info footer-info-right">
+                      <p>
+                        Correo: <a href="mailto:info@%Store.Name%.mx" target="_blank" rel="noopener noreferrer" class="mail-link color-%Store.Name%">info@%Store.Name%.mx</a>
+                      </p>
+                      <p>WhatsApp: <strong class="whatsapp-%Store.Name%">%Store.CompanyPhoneNumber%</strong></p>
+                      <p>Tel: <strong class="tel-%Store.Name%">%Store.CompanyPhoneNumber%</strong></p>
+                    </td>
+                </tr>
+              </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+            
